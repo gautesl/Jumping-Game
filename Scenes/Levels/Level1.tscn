@@ -1,0 +1,162 @@
+[gd_scene load_steps=15 format=1]
+
+[ext_resource path="res://Scripts/level1.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Background1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Fall line.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Target.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Potato.tscn" type="PackedScene" id=8]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2433.27, -666.05, 2538.39, -670.255, 2529.98, 872.884, 2433.27, 801.403 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2433.27, 801.403, 2529.98, 872.884, -556.3, 881.293, -400.725, 805.608 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -400.725, 805.608, -556.3, 881.293, -535.276, -476.837, -400.138, -482.737 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2433.27, -666.05, 2538.39, -670.255, 2529.98, 872.884, 2433.27, 801.403 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2433.27, 801.403, 2529.98, 872.884, -556.3, 881.293, -400.725, 805.608 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -400.725, 805.608, -556.3, 881.293, -535.276, -476.837, -400.138, -482.737 )
+
+[node name="Level1" type="Node2D"]
+
+script/script = ExtResource( 1 )
+next_level = "res://Scenes/Levels/Level2.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="Ground" parent="." instance=ExtResource( 3 )]
+
+[node name="Ground1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 680.665, 560.896 )
+
+[node name="Ground2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 869.247, 349.593 )
+
+[node name="Ground3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1147.28, 213.419 )
+
+[node name="Ground4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1278.22, 558.624 )
+
+[node name="Ground5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 862.431, -7.12274 )
+
+[node name="Ground6" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1653.56, 359.329 )
+
+[node name="Ground7" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1006.39, 710.807 )
+
+[node name="Background" type="Sprite" parent="."]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 992.105, -122.269 )
+transform/scale = Vector2( 4.58285, 2.94458 )
+z/z = -2
+texture = ExtResource( 4 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="Fall line" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1187.26, 1257.89 )
+transform/scale = Vector2( 89.5533, 1 )
+
+[node name="Target" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1669.71, 282.263 )
+
+[node name="Walls" type="StaticBody2D" parent="." groups=[ "Jumpable" ]]
+
+editor/display_folded = true
+visibility/behind_parent = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+__meta__ = { "_edit_group_":true, "_edit_lock_":true }
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+
+visibility/visible = false
+visibility/behind_parent = true
+build_mode = 0
+polygon = Vector2Array( -400.725, 805.608, 2433.27, 801.403, 2433.27, -666.05, 2538.39, -670.255, 2529.98, 872.884, -556.3, 881.293, -535.276, -476.837, -400.138, -482.737 )
+shape_range = Vector2( 0, 2 )
+trigger = false
+__meta__ = { "_edit_lock_":true }
+
+[node name="Coin" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 510.48, 326.373 )
+
+[node name="Coin2" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 866.59, 261.079 )
+
+[node name="Coin3" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1089.76, 122.613 )
+
+[node name="Coin 2" parent="." instance=ExtResource( 7 )]
+
+[node name="Potato" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 716.796, 486.123 )
+transform/scale = Vector2( 1.11006, 1.11006 )
+
+[node name="Potato1" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 842.06, -90.0908 )
+transform/scale = Vector2( 1.11006, 1.11006 )
+
+

@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://Scripts/level2.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Target.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Trampoline.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Potato.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Fall line.tscn" type="PackedScene" id=9]
+
+[node name="Level2" type="Node2D"]
+
+script/script = ExtResource( 1 )
+next_level = "res://Scenes/Levels/Level3.tscn"
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+
+[node name="Ground1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 680.665, 560.896 )
+
+[node name="Ground2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 869.247, 349.593 )
+
+[node name="Ground3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1137.35, 170.099 )
+
+[node name="Ground4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 55.8455, 215.541 )
+
+[node name="Ground5" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 862.431, -7.12274 )
+
+[node name="Ground6" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 269.869, -122.35 )
+
+[node name="Background" type="Sprite" parent="."]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 510.532, 378.108 )
+transform/scale = Vector2( 15.8405, 15.8405 )
+z/z = -2
+texture = ExtResource( 3 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="Target" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 320.503, -193.085 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 564.593, 203.565 )
+transform/scale = Vector2( 1.12914, 1.12914 )
+
+[node name="Potato" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 47.6131, 112.911 )
+
+[node name="Potato1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1172.64, 82.9828 )
+
+[node name="Potato3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 795.819, 277.516 )
+smart = true
+
+[node name="Coin" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 623.051, 89.7847 )
+
+[node name="Coin1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 755.008, 478.852 )
+
+[node name="Coin2" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -27.2073, 144.2 )
+
+[node name="Coin3" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 971.307, -54.4149 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+
+[node name="Fall line" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1131.51, 825.373 )
+
+

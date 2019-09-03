@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.7808, 10 )
+
+[node name="Fall line" type="Area2D"]
+
+transform/pos = Vector2( 1782.22, 0 )
+transform/scale = Vector2( 56.6944, 1 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 3.22138, 0, 0, 3.22138, -1.01363, 1.01367 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -1.01363, 1.01367 )
+transform/scale = Vector2( 3.22138, 3.22138 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

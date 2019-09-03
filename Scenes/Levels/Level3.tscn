@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://Scripts/level3.gd" type="Script" id=1]
+[ext_resource path="res://background3.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Fall line.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Trampoline.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Potato.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Target.tscn" type="PackedScene" id=9]
+
+[node name="Level3" type="Node2D"]
+
+script/script = ExtResource( 1 )
+next_level = "Final"
+
+[node name="Background" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1245.78, 783.59 )
+transform/scale = Vector2( 2.89857, 3.07765 )
+z/z = -2
+texture = ExtResource( 2 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 649.423, 1207.82 )
+
+[node name="Fall line" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1633.64, 1702.35 )
+
+[node name="Ground" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 858.596, 1327.68 )
+transform/scale = Vector2( 7.97352, 1.02921 )
+
+[node name="Ground 2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1097.44, 1159.49 )
+
+[node name="Ground3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1233.38, 963.124 )
+
+[node name="Ground5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1359.26, 283.389 )
+
+[node name="Ground6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 242.778, 317.637 )
+
+[node name="Ground4" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 571.39, 484.792 )
+transform/scale = Vector2( 11.5813, 1.02921 )
+
+[node name="Coin" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1063.93, 1270.91 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1548.28, 684.77 )
+
+[node name="Potato" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 553.858, 382.666 )
+shooting_rate = 1
+smart = true
+
+[node name="Potato2" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1054.35, 1080.02 )
+shooting_rate = 1
+moving = false
+smart = true
+
+[node name="Potato1" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1236.11, 868.55 )
+
+[node name="Target" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 240.857, 242.14 )
+
+
